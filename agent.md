@@ -18,12 +18,12 @@ Build a modular RESTful Product API with Node.js + Express + Mongoose that score
 
 ## Checklist (Rubric 100 pts)
 
-### 1. Foundation (20 pts) [pending]
+### 1. Foundation (20 pts) [done]
 - [ ] `config/connection.js`: `mongoose.connect(MONGO_URI)`, log success + error
 - [ ] `server.js`: `dotenv.config()`, `express.json()`, run DB connect, mount `app.use('/api/products', productRoutes)`, `app.listen(PORT)`
 - [ ] Verify `.env` has `MONGO_URI` + `PORT`, `.gitignore` is correct
 
-### 2. Schema & Model (15 pts) [pending]
+### 2. Schema & Model (15 pts) [done]
 - [ ] `models/Product.js` exact schema:
   - `name: { type: String, required: true }`
   - `description: { type: String, required: true }`
@@ -34,14 +34,14 @@ Build a modular RESTful Product API with Node.js + Express + Mongoose that score
   - `createdAt: { type: Date, default: Date.now }`
 - [ ] `export default mongoose.model('Product', productSchema)`
 
-### 3. Standard CRUD (40 pts) [pending]
+### 3. Standard CRUD (40 pts) [done]
 - [ ] `POST /api/products` -> 201 + created doc, 400 on validation failure
 - [ ] `GET /api/products/:id` -> 200, 404 if not found, 400 on invalid id
 - [ ] `PUT /api/products/:id` -> `{ new: true, runValidators: true }`, 404 if not found
 - [ ] `DELETE /api/products/:id` -> success message, 404 if not found
 - [ ] Router via `express.Router()`, logic inside `routes/productRoutes.js`
 
-### 4. Advanced Query GET /api/products (25 pts) [pending]
+### 4. Advanced Query GET /api/products (25 pts) [done]
 - [ ] `category` -> exact filter
 - [ ] `minPrice` / `maxPrice` -> `{ price: { $gte, $lte } }`
 - [ ] `sortBy`: `price_asc` / `price_desc`
@@ -49,7 +49,7 @@ Build a modular RESTful Product API with Node.js + Express + Mongoose that score
 - [ ] Query built dynamically, all params combinable
 - [ ] Respond with array of products
 
-### 5. Verify & Submit [pending]
+### 5. Verify & Submit [in_progress]
 - [ ] `node server.js` starts clean, connection log visible
 - [ ] Manual test: POST, GET all, GET :id, PUT, DELETE, filters + sort + pagination combos
 - [ ] `git status` clean of `.env` / `node_modules/`
